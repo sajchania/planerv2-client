@@ -4,20 +4,9 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'application'
 
-
-sourceCompatibility = 1.5
+sourceCompatibility = 1.8
 version = '1.0'
 
-sourceSets {
-    main {
-        java {
-            srcDir 'src/main/java'
-        }
-        resources {
-            srcDir 'src/main/resources'
-        }
-    }
-}
 
 repositories {
     mavenLocal()
@@ -26,6 +15,8 @@ repositories {
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
+
+mainClassName = "io.advantageous.qbit.example.hello.HelloWorldRestServer"
 
 
 dependencies {
