@@ -1,10 +1,10 @@
 package io.advantageous.qbit.example.hello;
 
-import io.advantageous.qbit.http.HttpServer;
+import io.advantageous.qbit.http.server.HttpServer;
 import io.advantageous.qbit.server.ServiceServer;
 import io.advantageous.qbit.system.QBitSystemManager;
 
-import static io.advantageous.qbit.http.HttpServerBuilder.httpServerBuilder;
+import static io.advantageous.qbit.http.server.HttpServerBuilder.httpServerBuilder;
 import static io.advantageous.qbit.server.ServiceServerBuilder.serviceServerBuilder;
 import static org.boon.Boon.resource;
 
@@ -34,7 +34,7 @@ public class HelloWorldRestServer {
             /* read the page from the file system or classpath. */
             final String helloWorldWebPage = resource(HTML_HELLO_PAGE);
             /* Send the HTML file out to the browser. */
-            httpRequest.getResponse().response(200, "text/html", helloWorldWebPage);
+            httpRequest.getReceiver().response(200, "text/html", helloWorldWebPage);
             return false;
         });
 

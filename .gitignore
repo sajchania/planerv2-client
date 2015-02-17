@@ -6,3 +6,7 @@ build/*
 gradle/wrapper/gradle-wrapper.properties
 
 hello.iml
+
+hello.ipr
+
+hello.iws
