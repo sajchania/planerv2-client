@@ -11,7 +11,7 @@
 
 <script>
 
-    function httpGet(theUrl)
+   function httpGet(theUrl)
     {
         var xmlHttp = null;
 
@@ -27,6 +27,8 @@
         var json = httpGet("/services/helloservice/hello");
 
         var helloObject = JSON.parse(json);
+
+        //alert(helloObject);
 
         document.getElementById("demo").innerHTML = helloObject.hello;
     }

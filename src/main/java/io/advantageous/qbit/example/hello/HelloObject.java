@@ -7,7 +7,7 @@ package io.advantageous.qbit.example.hello;
 
 public class HelloObject {
     private final String hello;
-    private final long time = System.currentTimeMillis();
+    //private final long time = System.currentTimeMillis();
 
     public HelloObject(String hello) {
         this.hello = hello;

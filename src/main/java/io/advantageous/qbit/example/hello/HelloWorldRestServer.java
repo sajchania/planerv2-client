@@ -7,7 +7,8 @@ import io.advantageous.qbit.system.QBitSystemManager;
 
 import static io.advantageous.qbit.http.server.HttpServerBuilder.httpServerBuilder;
 import static io.advantageous.qbit.server.ServiceServerBuilder.serviceServerBuilder;
-import static org.boon.Boon.resource;
+import static io.advantageous.boon.Boon.resource;
+
 
 /**
  * Created by rhightower on 2/9/15.
@@ -35,7 +36,7 @@ public class HelloWorldRestServer {
             /* read the page from the file system or classpath. */
             final String helloWorldWebPage = resource(HTML_HELLO_PAGE);
             /* Send the HTML file out to the browser. */
-            httpRequest.getResponse().response(200, "text/html", helloWorldWebPage);
+            httpRequest.getReceiver().response(200, "text/html", helloWorldWebPage);
             return false;
         });
 
