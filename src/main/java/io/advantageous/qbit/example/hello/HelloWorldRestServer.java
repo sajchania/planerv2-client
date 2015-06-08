@@ -1,13 +1,14 @@
 package io.advantageous.qbit.example.hello;
 
 
+import io.advantageous.boon.core.IO;
 import io.advantageous.qbit.http.server.HttpServer;
-import io.advantageous.qbit.server.ServiceServer;
+import io.advantageous.qbit.server.ServiceEndpointServer;
 import io.advantageous.qbit.system.QBitSystemManager;
 
+import static io.advantageous.boon.core.Str.add;
 import static io.advantageous.qbit.http.server.HttpServerBuilder.httpServerBuilder;
-import static io.advantageous.qbit.server.ServiceServerBuilder.serviceServerBuilder;
-import static io.advantageous.boon.Boon.resource;
+import static io.advantageous.qbit.server.EndpointServerBuilder.endpointServerBuilder;
 
 
 /**
@@ -42,13 +43,23 @@ public class HelloWorldRestServer {
 
 
         /* Start the service. */
-        final ServiceServer serviceServer = serviceServerBuilder().setSystemManager(systemManager)
+        final ServiceEndpointServer serviceServer = endpointServerBuilder().setSystemManager(systemManager)
                 .setHttpServer(httpServer).build().initServices(new HelloService()).startServer();
 
         /* Wait for the service to shutdown. */
         systemManager.waitForShutdown();
 
+
+    }
+
+    private static String resource(String path) {
+        if (!IO.exists(IO.path(path))) {
+            path = add(new String[]{"classpath:/", path});
+        }
+        String str = IO.read(path);
+        return str;
+    }
     }
 
 
-}
+
