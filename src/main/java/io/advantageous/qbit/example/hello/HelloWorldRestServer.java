@@ -2,11 +2,11 @@ package io.advantageous.qbit.example.hello;
 
 
 import io.advantageous.boon.core.IO;
+import io.advantageous.boon.core.Str;
 import io.advantageous.qbit.http.server.HttpServer;
 import io.advantageous.qbit.server.ServiceEndpointServer;
 import io.advantageous.qbit.system.QBitSystemManager;
 
-import static io.advantageous.boon.core.Str.add;
 import static io.advantageous.qbit.http.server.HttpServerBuilder.httpServerBuilder;
 import static io.advantageous.qbit.server.EndpointServerBuilder.endpointServerBuilder;
 
@@ -59,7 +59,10 @@ public class HelloWorldRestServer {
         String str = IO.read(path);
         return str;
     }
+    public static String add(String... args) {
+        return Str.add(args);
     }
+}
 
 
 
