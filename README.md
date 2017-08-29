@@ -5,13 +5,44 @@
 This document contains information on how to use planer-v2 application. The application uses QBit libraries (https://github.com/advantageous/qbit).
 
 ## Installation and running a demo 
-1. Download two projects and build them. Yes, one project is in gradle, another one is maven project.
+planerv2-server:
+
+1. Download 
 ```
-mvn clean install
+git clone https://github.com/sajchania/planerv2.git
+```
+2. Change directory
+```
+cd planerv2 
+
+3. Build project
+```
 gradle clean build
 ```
-2. Find SimpleRestServer class and run it once. If You run it more than once without stop, the second instance will throw exception
-3. Find SimpleRestClient class and run it. You can run SimpleRestClient class several times 
+4. Run projet
+```
+gradle run
+```
+ 
+planerv2-client:
+
+1. Download 
+```
+git clone https://github.com/sajchania/planerv2-client.git
+```
+2. Change directory
+```
+cd planerv2-client 
+
+3. Build project
+```
+gradle clean build
+```
+4. Run projet
+```
+gradle run
+```
+
 
 ## Functionalities
 If You would like to try something different than the demo in the SimpleRestClient, You can use CLI:
@@ -66,17 +97,15 @@ The project was time consuming. I had only 4 days for the release. Due to the fa
 
 ## Possible questions
 - Why there is no web interface?
-->  The web interface was written in JavaScript. It wasn't working properly, so it was replaced with a QBit client. 
+  The web interface was written in JavaScript. It wasn't working properly, so it was replaced with a QBit client. 
 - Why there is a QBit library instead of Spring?
--> I tried to use Spring first but due to issues with my PC I have decided to use something else. High performance micro-service library souds better for me. 
--> Why QBit?
-- It was said that is is fast. You need to click only once to run a server. And Tomcat + Spring + Eclipse + Firefox takes too much resources on my PC.
-- Why there are 2 projects: one with Maven second with Gradle?
--> I had only 4 days to solve the task
+> I tried to use Spring first but due to issues with my PC I have decided to use something else. High performance micro-service library souds better for me. 
+- Why QBit?
+ It was said that is is fast. You need to click only once to run a server. And Tomcat + Spring + Eclipse + Firefox takes too much resources on my PC.
 - Why there is no database / cluster?
-->  I had only 4 days to solve the task
+  I had only 4 days to solve the task
 - Why there is no default REST DELETE method in QBit's HttpClientBuilder?
--> ?! 
+ ?! 
 
 
 
