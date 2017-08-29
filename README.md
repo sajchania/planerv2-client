@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This document contains information on how to use planer-v2 application. The application uses QBit libraries (https://github.com/advantageous/qbit).
+This document contains information on how to use planer-v2 application. The application uses QBit libraries (https://github.com/advantageous/qbit). The application was tested using Ubuntu 16.04.
 
 ## Installation and running a demo 
 
@@ -77,7 +77,7 @@ curl -X GET http://localhost:6060/services/planer/available/building/room/BUILDI
 ```
 To see all available reservations in a particular building:
 ```
-curl -X GET http://localhost:6060/services/planer/available/building/hotel
+curl -X GET http://localhost:6060/services/planer/available/building/BUILDING_NAME
 ```
 ## Interpretation of results
 After each request You will receive a message. There are SUCCESS messages and ERROR messages.
@@ -98,15 +98,15 @@ The project was time consuming. I had only 4 days for the release. Due to the fa
 
 ## Possible questions
 - Why there is no web interface?
-->  The web interface was written in JavaScript. It wasn't working properly, so it was replaced with a QBit client. 
+  ->  The web interface was written in JavaScript. It wasn't working properly, so it was replaced with a QBit client. 
 - Why there is a QBit library instead of Spring?
--> I tried to use Spring first but due to issues with my PC I have decided to use something else. High performance micro-service library souds better for me. 
+  -> I tried to use Spring first but due to issues with my PC I have decided to use something else. High performance micro-service library souds better for me. 
 - Why QBit?
--> It was said that is is fast. You need to click only once to run a server. And Tomcat + Spring + Eclipse + Firefox takes too much resources on my PC.
+  -> It was said that is is fast. You need to click only once to run a server. And Tomcat + Spring + Eclipse + Firefox takes too much resources on my PC.
 - Why there is no database / cluster?
-->  I had only 4 days to solve the task
+  ->  I had only 4 days to solve the task
 - Why there is no default REST DELETE method in QBit's HttpClientBuilder?
--> ?! 
+  -> ?! 
 
 
 
