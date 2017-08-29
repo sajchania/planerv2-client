@@ -16,8 +16,7 @@ repositories {
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-mainClassName = "io.advantageous.qbit.example.hello.HelloWorldRestServer"
-
+mainClassName = "com.cognifide.interview.planerv2.client.SimpleRestClient"
 
 dependencies {
 
@@ -37,3 +36,5 @@ idea {
         languageLevel = '1.8'
     }
 }
+
+
