@@ -14,7 +14,7 @@ git clone https://github.com/sajchania/planerv2.git
 2. Change directory
 ```
 cd planerv2 
-
+```
 3. Build project
 ```
 gradle clean build
